@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactoController;
 use App\Http\Controllers\FilmController;
 use App\Http\Controllers\TagController;
 use App\Models\Film;
@@ -22,4 +23,7 @@ Route::get('/', function () {
 })->name('home');
 
 Route::resource('films', FilmController::class);
-Route::resource('tags', TagController::class);
+Route::resource('tags', TagController::class)->except('show');
+
+Route::get('contacto', [ContactoController::class, 'pintarFormulario'])->name('contacto.formulario');
+Route::post('contacto', [ContactoController::class, 'guardarFormulario'])->name('contacto.enviar');

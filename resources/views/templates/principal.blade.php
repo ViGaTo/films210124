@@ -51,9 +51,9 @@
                         </a>
                     </li>
                     <li>
-                        <a href="" @class([
+                        <a href="{{route('contacto.formulario')}}" @class([
                             'block py-2 px-3 rounded',
-                            'text-blue-500' => request()->routeIs(''),
+                            'text-blue-500' => request()->routeIs('contacto.*'),
                         ]) aria-current="page">
                             <i class="fa-regular fa-envelope mr-2"></i> Contáctanos
                         </a>
